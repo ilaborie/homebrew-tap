@@ -1,25 +1,25 @@
 class Html2pdf < Formula
   desc "Convert HTML to PDF using a Headless Chrome browser"
   homepage "https://github.com/ilaborie/html2pdf"
-  version "0.8.3"
+  version "0.9.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.8.3/html2pdf-aarch64-apple-darwin.tar.xz"
-      sha256 "53b25ad8c38ab32c7f8578cd9bf5aa1a73dd3e8758c059dd9c04e0c40424bf23"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-aarch64-apple-darwin.tar.xz"
+      sha256 "c4e9e642773a0e71fa2ecc5c920d435ce0fcb20300d1283e2a843abdf3615d6b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.8.3/html2pdf-x86_64-apple-darwin.tar.xz"
-      sha256 "6b7a3cfddb12dc1fffaa160a3223750655400d525cffc7b49de9417cc8306336"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-x86_64-apple-darwin.tar.xz"
+      sha256 "a47df984a07f0621e2412ae3d599a1e85111e7a8d374ef286909b7b4cd8b8c72"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.8.3/html2pdf-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "5a45475a1f6695c886ca0df08f975a63f794af9d9e48d09ab346598b9ad337b1"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "94260b1e49ea4a305da41545572af0f381103082252c21e6fb88556ede413020"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.8.3/html2pdf-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8617015fd65a65cbf4ecd248635b06b8b27b2eb7fba5b9c758abfeb843336d42"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "06bcce3165f937f2ad198398a75376449102d5b2a669295ad508d565f220fd9d"
     end
   end
   license any_of: ["Apache-2.0", "MIT"]
@@ -48,10 +48,18 @@ class Html2pdf < Formula
   end
 
   def install
-    bin.install "html2pdf" if OS.mac? && Hardware::CPU.arm?
-    bin.install "html2pdf" if OS.mac? && Hardware::CPU.intel?
-    bin.install "html2pdf" if OS.linux? && Hardware::CPU.arm?
-    bin.install "html2pdf" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "html2pdf"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "html2pdf"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "html2pdf"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "html2pdf"
+    end
 
     install_binary_aliases!
 

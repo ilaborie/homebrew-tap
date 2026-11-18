@@ -1,25 +1,25 @@
 class Html2pdf < Formula
   desc "Convert HTML to PDF using a Headless Chrome browser"
   homepage "https://github.com/ilaborie/html2pdf"
-  version "0.9.0"
+  version "0.10.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-aarch64-apple-darwin.tar.xz"
-      sha256 "c4e9e642773a0e71fa2ecc5c920d435ce0fcb20300d1283e2a843abdf3615d6b"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.10.1/html2pdf-aarch64-apple-darwin.tar.xz"
+      sha256 "ad7b91bcb3f65ccf0cdd407356fc75014c1ae5da7fc5af5c46e16bdda616ac2f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-x86_64-apple-darwin.tar.xz"
-      sha256 "a47df984a07f0621e2412ae3d599a1e85111e7a8d374ef286909b7b4cd8b8c72"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.10.1/html2pdf-x86_64-apple-darwin.tar.xz"
+      sha256 "73cf008c119a9adf5e35ab773b4951b9cff424180d129c0063ed3cd2c09321da"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "94260b1e49ea4a305da41545572af0f381103082252c21e6fb88556ede413020"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.10.1/html2pdf-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e0029f4a5a084ac8299dac33f7a6f90025baabdbe40b65982572608f42360b51"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ilaborie/html2pdf/releases/download/v0.9.0/html2pdf-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "06bcce3165f937f2ad198398a75376449102d5b2a669295ad508d565f220fd9d"
+      url "https://github.com/ilaborie/html2pdf/releases/download/v0.10.1/html2pdf-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "9470dcc34abc793ea32fec8941915900babf342110d7d244c0092c7d06c9d3fc"
     end
   end
   license any_of: ["Apache-2.0", "MIT"]
